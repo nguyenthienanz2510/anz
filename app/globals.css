@@ -12,7 +12,7 @@ body {
 
 @layer base{
   body {
-      @apply bg-color-bg-dark-primary dark:bg-color-bg-light-primary
+      @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary text-color-text-dark-secondary dark:text-color-text-light-secondary
   }
 }
 
@@ -21,12 +21,12 @@ body {
     @apply text-color-text-light-primary dark:text-color-text-dark-primary
   }
   .text-color-secondary { 
-    @apply text-color-text-light-secondary dark:text-color-text-dark-secondary
+    @apply text-color-text-dark-secondary dark:text-color-text-light-secondary
   }
   .bg-color-primary {
     @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary
-  }
+  } 
   .bg-color-secondary {
-    @apply bg-color-bg-light-secondary dark:bg-color-bg-dark-secondary
+    @apply bg-color-bg-dark-secondary dark:bg-color-bg-light-secondary
   }
 }

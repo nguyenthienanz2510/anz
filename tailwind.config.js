@@ -21,10 +21,10 @@ module.exports = {
         'color-secondary-light': '#F472B6',
         'color-secondary-dark': '#F472B6',
 
-        'color-text-light-primary': '#0F172A',
-        'color-text-light-secondary': '#334155',
-        'color-text-dark-primary': '#E2E8F0',
-        'color-text-dark-secondary': '#94A3B8',
+        'color-text-dark-primary': '#0F172A',
+        'color-text-dark-secondary': '#334155',
+        'color-text-light-primary': '#E2E8F0',
+        'color-text-light-secondary': '#94A3B8',
 
         'color-success': '#03a66d',
         'color-info': '#17a2b8',
