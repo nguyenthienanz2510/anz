@@ -2,12 +2,22 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true,
+    appDir: true
   },
   images: {
-    domains: ["links.papareact.com"]
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'links.papareact.com',
+        port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent.fsgn5-11.fna.fbcdn.net',
+        port: ''
+      }
+    ]
   }
-
 }
 
 module.exports = nextConfig

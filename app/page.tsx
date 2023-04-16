@@ -1,29 +1,23 @@
 import Header from '@/components/Portfolio/Header.tsx'
 import Hero from '@/components/Portfolio/Hero'
-import Head from 'next/head'
 import React from 'react'
 
 export default function Home() {
   return (
-    <React.Fragment>
+    <div className='h-screen snap-y snap-mandatory overflow-y-auto'>
       <Header />
 
-      <section id='portfolioHero'>
+      <section id='portfolioHero' className='snap-center'>
         <Hero />
       </section>
 
-      <h2 className='p-5 '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
-      <h2 className='p-5 '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
-      <h2 className='line-clamp-1 p-5  '>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque debitis ducimus itaque distinctio iusto fugit
-        rerum, et delectus? Esse dolorum aliquam optio voluptatum, excepturi, ipsa animi suscipit ratione dignissimos
-        facere officia repellat amet quidem aliquid enim nihil commodi maiores aperiam vitae repellendus. Rerum eos ut,
-        quia pariatur consectetur hic quod placeat sint excepturi quis accusamus nulla. Consequuntur fugiat dolore id
-        illo harum doloremque odio corrupti nam, consectetur nihil laboriosam itaque sunt. Deserunt quos, libero dolorum
-        saepe vel, nulla repellat at laborum laudantium, veritatis corporis tempore unde ipsam consectetur illum
-        praesentium ratione voluptas reprehenderit minus. Dolorum veniam excepturi nihil ut assumenda.
-      </h2>
-      <h2 className='p-5  '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
-    </React.Fragment>
+      <section id='portfolioAbout' className='h-screen snap-center bg-blue-500'></section>
+
+      <section id='portfolioExperience' className='h-screen snap-center bg-red-500'></section>
+
+      <section id='portfolioSkills' className='h-screen snap-center bg-yellow-500'></section>
+
+      <section id='portfolioProjects' className='h-screen snap-center bg-orange-500'></section>
+    </div>
   )
 }
