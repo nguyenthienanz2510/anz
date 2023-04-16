@@ -10,9 +10,20 @@ body {
   font-weight: 300;
 }
 
+::selection {
+  background: #0EA5E9;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #0EA5E9;
+  color: #ffffff;
+}
+
 @layer base{
   body {
       @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary text-color-text-dark-secondary dark:text-color-text-light-secondary
+      scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700
   }
 }
 

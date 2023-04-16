@@ -1,6 +1,17 @@
+import Header from '@/components/Portfolio/Header.tsx'
+import Hero from '@/components/Portfolio/Hero'
+import Head from 'next/head'
+import React from 'react'
+
 export default function Home() {
   return (
-    <div>
+    <React.Fragment>
+      <Header />
+
+      <section id='portfolioHero'>
+        <Hero />
+      </section>
+
       <h2 className='p-5 '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
       <h2 className='p-5 '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
       <h2 className='line-clamp-1 p-5  '>
@@ -13,6 +24,6 @@ export default function Home() {
         praesentium ratione voluptas reprehenderit minus. Dolorum veniam excepturi nihil ut assumenda.
       </h2>
       <h2 className='p-5  '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, amet.</h2>
-    </div>
+    </React.Fragment>
   )
 }
