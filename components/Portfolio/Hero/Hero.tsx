@@ -41,18 +41,18 @@ export default function Hero({}: Props) {
             <Cursor cursorColor='#F472B6' />
           </h1>
           <div className='z-1 relative mx-auto flex justify-center gap-6 text-xs md:gap-10 md:text-sm'>
-            <Link href={'#portfolioAbout'}>
+            <a href='#portfolioAbout'>
               <button className='uppercase'>About</button>
-            </Link>
-            <Link href={'#portfolioExperience'}>
+            </a>
+            <a href='#portfolioExperience'>
               <button className='uppercase'>Experience</button>
-            </Link>
-            <Link href={'#portfolioSkills'}>
+            </a>
+            <a href='#portfolioSkills'>
               <button className='uppercase'>Skills</button>
-            </Link>
-            <Link href={'#portfolioProjects'}>
+            </a>
+            <a href='#portfolioProjects'>
               <button className='uppercase'>Projects</button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -15,6 +15,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'scontent.fsgn5-11.fna.fbcdn.net',
         port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: ''
       }
     ]
   }
