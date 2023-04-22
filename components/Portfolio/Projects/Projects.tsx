@@ -12,7 +12,7 @@ export default function Projects({}: Props) {
     <div className='relative mx-auto flex h-screen items-center justify-center pt-[50px]'>
       <h2 className='absolute top-20 z-10 translate-x-3 text-16 uppercase tracking-[20px] md:text-20'>Projects</h2>
       <div className='absolute top-[30%] z-0 h-[50%] w-full -skew-y-12 bg-color-primary-light/20 md:-skew-y-6'></div>
-      <div className='h-[70vh] w-full'>
+      <div className='h-full w-full px-4 md:px-0'>
         <Carousel slideInterval={5000}>
           {projects.map((_, index) => {
             return (
@@ -23,7 +23,7 @@ export default function Projects({}: Props) {
                   duration: 1.2
                 }}
                 key={index}
-                className='flex h-full w-3/4 flex-col justify-center space-y-3 text-center md:space-y-4'
+                className='flex h-full flex-col justify-center space-y-3 text-center md:space-y-4'
               >
                 <motion.img
                   initial={{ translateY: -100 }}
@@ -33,7 +33,7 @@ export default function Projects({}: Props) {
                   }}
                   src='https://d1ubwt7z1ubyyw.cloudfront.net/uploads/best-places-to-visit-for-christmas-season-meta-1673593447.jpg'
                   alt='project image'
-                  className='mx-auto block w-[70vw] flex-shrink-0 rounded-lg md:w-1/2'
+                  className='mx-auto block w-3/4 flex-shrink-0 rounded-lg md:w-1/2'
                 />
                 <motion.div
                   initial={{ translateY: 100 }}
@@ -49,7 +49,7 @@ export default function Projects({}: Props) {
                     </span>{' '}
                     MugsKOK
                   </h2>
-                  <p className='text-14 md:text-16'>
+                  <p className='w-full text-justify text-14 md:w-3/4 md:text-center md:text-16 mx-auto'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni assumenda corporis. Dolores
                     aliquam voluptatum quae. Fuga aliquid nam inventore unde tempore itaque dolorum quas, commodi
                     numquam provident quibusdam nulla suscipit nostrum, eligendi mollitia reiciendis eveniet consectetur

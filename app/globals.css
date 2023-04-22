@@ -27,6 +27,12 @@ body {
   }
 }
 
+@layer components {
+  .contactInput {
+    @apply text-14 md:text-16 rounded outline-none focus:border-color-primary-light p-4 w-full text-color-text-light-primary placeholder-color-text-light-secondary bg-color-text-dark-secondary
+  }
+}
+
 @layer utilities {
   .text-color-primary {
     @apply text-color-text-light-primary dark:text-color-text-dark-primary
