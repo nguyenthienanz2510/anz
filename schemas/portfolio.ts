@@ -19,6 +19,20 @@ export default defineType({
       }
     },
     {
+      name: 'aboutMeImage',
+      title: 'aboutMeImage',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'slogan',
+      title: 'Slogan',
+      type: 'array',
+      of: [{ type: 'string' }]
+    },
+    {
       name: 'backgroundInformation',
       title: 'Background Information',
       type: 'string'

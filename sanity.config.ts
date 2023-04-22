@@ -11,8 +11,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 
 export default defineConfig({
   basePath: '/dashboard',
-  name: 'NGUYENTHIENANZ_Content_Studio',
-  title: 'Content Studio',
+  name: 'Dashboard_NguyenThienAnz',
+  title: 'Dashboard',
 
   projectId,
   dataset,
