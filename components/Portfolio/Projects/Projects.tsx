@@ -49,7 +49,7 @@ export default function Projects({}: Props) {
                     </span>{' '}
                     MugsKOK
                   </h2>
-                  <p className='w-full text-justify text-14 md:w-3/4 md:text-center md:text-16 mx-auto'>
+                  <p className='mx-auto w-full text-justify text-14 md:w-3/4 md:text-center md:text-16'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni assumenda corporis. Dolores
                     aliquam voluptatum quae. Fuga aliquid nam inventore unde tempore itaque dolorum quas, commodi
                     numquam provident quibusdam nulla suscipit nostrum, eligendi mollitia reiciendis eveniet consectetur
