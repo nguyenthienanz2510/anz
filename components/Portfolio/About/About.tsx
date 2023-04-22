@@ -38,8 +38,10 @@ export default function About({}: Props) {
           alt={'avatar'}
         />
         <div className='space-y-5'>
-          <h3 className='text-22 font-bold text-color-text-light-primary md:text-36'>Here is a little background</h3>
-          <p className='text-16 text-color-text-light-primary md:text-18'>
+          <h3 className='text-22 font-bold md:text-36'>
+            Here is a little background
+          </h3>
+          <p className='text-16 md:text-18'>
             My name is Nguyen Thien An ⚽️, and I was born in 1998 in Tien Giang province. I have been working as a
             Frontend developer 🖥 for a year now. Prior to this, I worked in the automotive industry for 2 years. I enjoy
             the creativity and problem-solving aspects of my current role, and I am always looking to improve my skills

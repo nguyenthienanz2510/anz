@@ -20,6 +20,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
         port: ''
+      },
+      {
+        protocol: 'https',
+        hostname: 'd1ubwt7z1ubyyw.cloudfront.net',
+        port: ''
       }
     ]
   }

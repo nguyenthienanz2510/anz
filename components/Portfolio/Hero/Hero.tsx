@@ -37,7 +37,7 @@ export default function Hero({}: Props) {
         <div className='z-1 relative space-y-5'>
           <h2 className='text-xs uppercase tracking-[8px] md:text-sm md:tracking-[12px]'>Frontend Developer</h2>
           <h1 className='px-4 text-xl font-bold md:px-10 md:text-3xl'>
-            <span className='text-color-text-dark-primary dark:text-color-text-light-primary'>{text}</span>
+            <span>{text}</span>
             <Cursor cursorColor='#F472B6' />
           </h1>
           <div className='z-1 relative mx-auto flex justify-center gap-6 text-xs md:gap-10 md:text-sm'>

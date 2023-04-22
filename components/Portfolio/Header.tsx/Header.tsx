@@ -53,8 +53,10 @@ export default function Header({}: Props) {
         }}
         className='flex items-center text-gray-500'
       >
-        <SocialIcon network='email' className='cursor-pointer' fgColor='gray' bgColor='transparent' />
-        <p className='hidden pr-2 uppercase md:inline-flex'>Get in touch</p>
+        <SocialIcon href='#contactMe' network='email' className='cursor-pointer' fgColor='gray' bgColor='transparent' />
+        <p className='hidden pr-2 uppercase md:inline-flex'>
+          <a href='#contactMe'>Get in touch</a>
+        </p>
       </motion.div>
     </header>
   )
