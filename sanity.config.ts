@@ -1,16 +1,16 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig } from 'sanity'
+import { deskTool } from 'sanity/desk'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemas'
 import { myTheme } from './theme'
-import StudioNavbar from './components/Studio/StudioNavbar'
-import Logo from './components/Studio/Logo'
+import StudioNavbar from './components/Dashboard/StudioNavbar'
+import Logo from './components/Dashboard/Logo'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
 
 export default defineConfig({
-  basePath: "/studio",
+  basePath: '/dashboard',
   name: 'NGUYENTHIENANZ_Content_Studio',
   title: 'Content Studio',
 
@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: schemaTypes,
+    types: schemaTypes
   },
 
   studio: {
@@ -30,5 +30,5 @@ export default defineConfig({
     }
   },
 
-  theme: myTheme,
+  theme: myTheme
 })
