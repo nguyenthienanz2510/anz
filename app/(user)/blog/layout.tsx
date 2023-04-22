@@ -1,3 +1,5 @@
+import Header from '@/components/Blog/Header'
+
 export const metadata = {
   title: "Nguyen Thien An's Blog",
   description: "Nguyen Thien An's Blog"
@@ -6,7 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

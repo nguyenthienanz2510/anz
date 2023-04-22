@@ -1,7 +1,12 @@
+
 import React from 'react'
 
 type Props = {}
 
 export default function page({}: Props) {
-  return <div>blog</div>
+  return (
+    <div>
+      body
+    </div>
+  )
 }
