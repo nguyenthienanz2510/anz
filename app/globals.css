@@ -11,39 +11,56 @@ body {
 }
 
 ::selection {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #ffffff;
 }
 
 ::-moz-selection {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #ffffff;
 }
 
-@layer base{
+@layer base {
   body {
-      @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary text-color-text-dark-secondary dark:text-color-text-light-secondary
-      scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700
+    @apply bg-color-bg-light-primary text-color-text-dark-secondary scrollbar-thin scrollbar-track-gray-200
+      scrollbar-thumb-gray-700 dark:bg-color-bg-dark-primary dark:text-color-text-light-secondary;
   }
 }
 
 @layer components {
   .contactInput {
-    @apply text-14 md:text-16 rounded outline-none focus:border-color-primary-light p-4 w-full text-color-text-light-primary placeholder-color-text-light-secondary bg-color-text-dark-secondary
+    @apply w-full rounded bg-color-text-dark-secondary p-4 text-14 text-color-text-light-primary placeholder-color-text-light-secondary outline-none focus:border-color-primary-light md:text-16;
+  }
+
+  .btn-primary {
+    @apply rounded bg-color-primary-light px-5 py-2 text-white duration-500 hover:bg-color-primary-dark;
+  }
+
+  .text-highlight-primary {
+    @apply text-color-primary-light underline decoration-color-primary-light dark:text-color-primary-dark dark:decoration-color-primary-dark;
+  }
+  .text-highlight-secondary {
+    @apply text-color-secondary-light underline decoration-color-secondary-light dark:text-color-secondary-dark dark:decoration-color-secondary-dark;
+  }
+  .underline-primary {
+    @apply underline decoration-color-primary-light dark:decoration-color-primary-dark;
+  }
+  .underline-secondary {
+    @apply underline decoration-color-secondary-light dark:decoration-color-secondary-dark;
   }
 }
 
 @layer utilities {
   .text-color-primary {
-    @apply text-color-text-light-primary dark:text-color-text-dark-primary
+    @apply text-color-text-light-primary dark:text-color-text-dark-primary;
   }
-  .text-color-secondary { 
-    @apply text-color-text-dark-secondary dark:text-color-text-light-secondary
+  .text-color-secondary {
+    @apply text-color-text-dark-secondary dark:text-color-text-light-secondary;
   }
   .bg-color-primary {
-    @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary
-  } 
+    @apply bg-color-bg-light-primary dark:bg-color-bg-dark-primary;
+  }
   .bg-color-secondary {
-    @apply bg-color-bg-dark-secondary dark:bg-color-bg-light-secondary
+    @apply bg-color-bg-dark-secondary dark:bg-color-bg-light-secondary;
   }
 }

@@ -23,7 +23,7 @@ export default function Header({}: Props) {
         </div>
         <div className='flex items-center gap-4'>
           <ThemeSwitcher />
-          <button>Subscribe</button>
+          <button className='btn-primary'>Subscribe</button>
         </div>
       </div>
     </header>

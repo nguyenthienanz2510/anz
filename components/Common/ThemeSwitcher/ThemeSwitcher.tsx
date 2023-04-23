@@ -24,7 +24,7 @@ export default function ThemeSwitcher({}: Props) {
     <div className='duration-500'>
       {currentTheme === 'dark' ? (
         <SunIcon
-          className='h-7 w-7'
+          className='h-7 w-7 cursor-pointer duration-500 hover:text-color-primary-light dark:hover:text-color-primary-dark'
           onClick={() => {
             console.log(currentTheme, theme)
             setTheme('light')
@@ -32,7 +32,7 @@ export default function ThemeSwitcher({}: Props) {
         />
       ) : (
         <MoonIcon
-          className='h-7 w-7'
+          className='h-7 w-7 cursor-pointer duration-500 hover:text-color-primary-light dark:hover:text-color-primary-dark'
           onClick={() => {
             console.log(currentTheme, theme)
             setTheme('dark')

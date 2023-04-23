@@ -1,3 +1,4 @@
+import Banner from '@/components/Blog/Banner'
 import Header from '@/components/Blog/Header'
 
 export const metadata = {
@@ -10,6 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body>
         <Header />
+        <Banner />
         {children}
       </body>
     </html>
