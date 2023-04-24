@@ -23,6 +23,8 @@
     "react-hook-form": "^7.43.9",
     "react-simple-typewriter": "^5.0.1",
     "sanity": "^3.0.0",
+    "sanity-plugin-iframe-pane": "^2.3.0",
+    "sharp": "^0.32.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
