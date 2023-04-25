@@ -1,4 +1,4 @@
-import {buildLegacyTheme, defineConfig} from 'sanity'
+import { buildLegacyTheme, defineConfig } from 'sanity'
 
 const props = {
   '--my-white': '#fff',
@@ -6,7 +6,7 @@ const props = {
   '--my-blue': '#38BDF8',
   '--my-red': '#cf304a',
   '--my-yellow': '#ffc107',
-  '--my-green': '#03a66d',
+  '--my-green': '#03a66d'
 }
 
 export const myTheme = buildLegacyTheme({
@@ -40,5 +40,5 @@ export const myTheme = buildLegacyTheme({
   '--main-navigation-color': props['--my-black'],
   '--main-navigation-color--inverted': props['--my-white'],
 
-  '--focus-color': props['--my-blue'],
+  '--focus-color': props['--my-blue']
 })

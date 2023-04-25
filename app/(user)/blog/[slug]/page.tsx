@@ -1,5 +1,7 @@
+import { RichTextComponents } from '@/components/Common/RichTextComponents/RichTextComponents'
 import { client } from '@/lib/sanity.client'
 import urlFor from '@/lib/urlFor'
+import { PortableText } from '@portabletext/react'
 import { groq } from 'next-sanity'
 import Image from 'next/image'
 import React from 'react'
@@ -39,11 +41,11 @@ export default async function Post({ params: { slug } }: Props) {
               />
             </div>
           </div>
-          <div className='flex flex-col justify-between gap-5 space-y-2 rounded bg-color-primary-light bg-opacity-80 p-5 text-white md:text-16'>
-            <div className='flex flex-col md:flex-row justify-between'>
+          <div className='flex flex-col justify-between gap-5 rounded bg-color-primary-light bg-opacity-80 p-5 text-white md:text-16'>
+            <div className='flex flex-col justify-between gap-5 md:flex-row'>
               <div className='space-y-2'>
                 <h3 className='text-24 font-bold md:text-36'>{post.title}</h3>
-                <p>
+                <p className='text-color-text-light-primary'>
                   {new Date(post._createdAt).toLocaleDateString('en-US', {
                     day: 'numeric',
                     month: 'long',
@@ -80,6 +82,9 @@ export default async function Post({ params: { slug } }: Props) {
             </div>
           </div>
         </div>
+      </section>
+      <section className='container mb-20 mt-10'>
+        <PortableText value={post.body} components={RichTextComponents} />
       </section>
     </article>
   )

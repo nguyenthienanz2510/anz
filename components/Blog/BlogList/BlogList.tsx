@@ -12,7 +12,7 @@ export default function BlogList({ posts }: Props) {
   return (
     <section className='container'>
       <hr className='mb-10 border-color-primary-light dark:border-color-primary-dark' />
-      <div className='grid grid-cols-1 gap-x-7 gap-y-10 xl:grid-cols-2'>
+      <div className='mb-20 grid grid-cols-1 gap-x-7 gap-y-10 xl:grid-cols-2'>
         {posts?.map((post) => {
           return (
             <ClientSideRoute route={`/blog/${post.slug.current}`} key={post._id}>
@@ -27,7 +27,7 @@ export default function BlogList({ posts }: Props) {
                       fill
                     />
                   </div>
-                  <div className='absolute bottom-0 w-full space-y-2 rounded bg-black bg-opacity-20 p-5 text-14 text-white drop-shadow-lg backdrop-blur-lg md:text-16'>
+                  <div className='absolute bottom-0 w-full space-y-1 rounded-b bg-black bg-opacity-20 px-3 py-2 text-14 text-white drop-shadow-lg backdrop-blur-lg md:space-y-2 md:px-5 md:py-3 md:text-16'>
                     <h3 className='line-clamp-1 font-bold'>{post.title}</h3>
                     <p>
                       {new Date(post._createdAt).toLocaleDateString('en-US', {

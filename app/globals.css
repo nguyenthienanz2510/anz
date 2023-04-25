@@ -22,8 +22,8 @@ body {
 
 @layer base {
   body {
-    @apply bg-color-bg-light-primary text-color-text-dark-secondary scrollbar-thin scrollbar-track-gray-200
-      scrollbar-thumb-gray-700 dark:bg-color-bg-dark-primary dark:text-color-text-light-secondary;
+    @apply bg-color-bg-light-primary text-color-text-dark-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700
+      dark:bg-color-bg-dark-primary dark:text-color-text-light-secondary;
   }
 }
 

@@ -23,9 +23,9 @@ module.exports = {
         'color-secondary-dark': '#F472B6',
 
         'color-text-dark-primary': '#0F172A',
-        'color-text-dark-secondary': '#334155',
+        'color-text-dark-secondary': '#1E293B',
         'color-text-light-primary': '#E2E8F0',
-        'color-text-light-secondary': '#94A3B8',
+        'color-text-light-secondary': '#CBD5E1',
 
         'color-success': '#03a66d',
         'color-info': '#17a2b8',
