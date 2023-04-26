@@ -48,6 +48,48 @@ body {
   .underline-secondary {
     @apply underline decoration-color-secondary-light dark:decoration-color-secondary-dark;
   }
+  .blog-content {
+    @apply text-justify container mb-20 mt-10 md:mt-14;
+  }
+  .blog-content ul {
+    @apply mb-5 ml-6 list-disc space-y-4 md:ml-10
+  }
+  .blog-content ol {
+    @apply mb-5 ml-6 list-decimal space-y-4 md:ml-10
+  }
+  .blog-content div:has(img) {
+    @apply mx-auto my-7 w-full md:my-10 md:w-[80%]
+  }
+  .blog-content div:has(img) img {
+    @apply rounded-lg
+  }
+  .blog-content blockquote {
+    @apply my-10 border-l-4 border-l-color-secondary-light py-2 pl-5;
+  }
+  .blog-content p {
+    @apply mb-5;
+  }
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4 {
+    @apply mb-5 font-bold text-color-text-dark-primary dark:text-color-text-light-primary;
+  }
+  .blog-content h1 {
+    @apply text-32
+  }
+  .blog-content h2 {
+    @apply text-28
+  }
+  .blog-content h3 {
+    @apply text-24
+  }
+  .blog-content h4 {
+    @apply text-20
+  }
+  .blog-content a {
+    @apply underline decoration-color-secondary-light transition-all hover:text-color-secondary-light
+  }
 }
 
 @layer utilities {

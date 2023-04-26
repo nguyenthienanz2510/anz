@@ -14,6 +14,8 @@ const query = groq`
 } | order(_createdAt desc)
 `
 
+export const revalidate = 60
+
 type Props = {}
 
 export default async function page({}: Props) {

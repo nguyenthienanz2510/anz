@@ -6,7 +6,7 @@ type Props = {}
 export default function Banner({}: Props) {
   return (
     <section>
-      <div className='container flex flex-col justify-between gap-5 py-10 xl:flex-row'>
+      <div className='container flex flex-col justify-between gap-5 py-10 md:py-14 xl:flex-row'>
         <div className='space-y-3 xl:flex-[7]'>
           <h1 className='cursor-wait text-5xl font-bold leading-[60px] text-color-text-dark-primary transition-colors duration-1000 hover:text-color-primary-light dark:text-color-text-light-primary dark:hover:text-color-primary-dark md:text-7xl md:leading-[84px]'>
             Nguyen Thien An&apos;s Daily Blog

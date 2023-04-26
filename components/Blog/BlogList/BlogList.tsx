@@ -11,7 +11,7 @@ type Props = {
 export default function BlogList({ posts }: Props) {
   return (
     <section className='container'>
-      <hr className='mb-10 border-color-primary-light dark:border-color-primary-dark' />
+      <hr className='mb-10 border-color-primary-light dark:border-color-primary-dark md:mb-14' />
       <div className='mb-20 grid grid-cols-1 gap-x-7 gap-y-10 xl:grid-cols-2'>
         {posts?.map((post) => {
           return (

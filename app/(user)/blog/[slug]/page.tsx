@@ -12,6 +12,25 @@ type Props = {
   }
 }
 
+export const revalidate = 60
+
+export async function generateStaticParams() {
+  const query = groq`
+  *[_type=='post']
+  {
+    slug
+  }
+`
+  const slugs: Post[] = await client.fetch(query)
+  const slugRoutes = slugs.map((slug) => {
+    return slug.slug.current
+  })
+
+  return slugRoutes.map((slug) => ({
+    slug: slug
+  }))
+}
+
 export default async function Post({ params: { slug } }: Props) {
   const query = groq`
         *[_type=='post' && slug.current == $slug][0]
@@ -23,8 +42,6 @@ export default async function Post({ params: { slug } }: Props) {
     `
 
   const post: Post = await client.fetch(query, { slug })
-
-  console.log(post)
 
   return (
     <article>
@@ -53,7 +70,7 @@ export default async function Post({ params: { slug } }: Props) {
                   })}
                 </p>
               </div>
-              <div className='flex flex-shrink-0 items-start gap-2 pt-2.5'>
+              <div className='flex flex-shrink-0 items-start gap-2 pt-2'>
                 <Image
                   className='rounded-full object-cover object-center'
                   alt={post.author.name}
@@ -83,7 +100,7 @@ export default async function Post({ params: { slug } }: Props) {
           </div>
         </div>
       </section>
-      <section className='container mb-20 mt-10'>
+      <section className='blog-content'>
         <PortableText value={post.body} components={RichTextComponents} />
       </section>
     </article>

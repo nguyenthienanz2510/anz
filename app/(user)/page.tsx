@@ -7,6 +7,8 @@ import Skills from '@/components/Portfolio/Skills'
 import WorkExperience from '@/components/Portfolio/WorkExperience'
 import React from 'react'
 
+export const revalidate = 60
+
 export default function Home() {
   return (
     <div className='h-screen snap-y snap-mandatory overflow-y-auto bg-color-bg-dark-primary text-color-text-light-primary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700'>
