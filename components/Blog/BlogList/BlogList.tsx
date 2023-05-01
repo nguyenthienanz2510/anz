@@ -15,7 +15,7 @@ export default function BlogList({ posts }: Props) {
       <div className='mb-20 grid grid-cols-1 gap-x-7 gap-y-10 xl:grid-cols-2'>
         {posts?.map((post) => {
           return (
-            <ClientSideRoute route={`/blog/${post.slug.current}`} key={post._id}>
+            <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
               <div key={post._id} className='group cursor-pointer '>
                 <div className='relative shadow-xl'>
                   <div className='relative w-full overflow-hidden rounded pt-[56.25%]'>

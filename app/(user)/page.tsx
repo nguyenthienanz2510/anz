@@ -1,42 +1,42 @@
-import About from '@/components/Portfolio/About'
-import Contact from '@/components/Portfolio/Contact'
-import Header from '@/components/Portfolio/Header.tsx'
-import Hero from '@/components/Portfolio/Hero'
-import Projects from '@/components/Portfolio/Projects'
-import Skills from '@/components/Portfolio/Skills'
-import WorkExperience from '@/components/Portfolio/WorkExperience'
 import React from 'react'
+import { previewData } from 'next/headers'
+import { groq } from 'next-sanity'
+import { client } from '@/lib/sanity.client'
+import PreviewSuspense from '@/components/Blog/PreviewSuspense'
+import PreviewBlogList from '@/components/Blog/PreviewBlogList'
+import BlogList from '@/components/Blog/BlogList'
+
+const query = groq`
+  *[_type == "post"]{
+  ...,
+  author->,
+  categories[]->
+} | order(_createdAt desc)
+`
 
 export const revalidate = 60
 
-export default function Home() {
+type Props = {}
+
+export default async function page({}: Props) {
+  if (previewData()) {
+    return (
+      <PreviewSuspense
+        fallback={
+          <div role='status'>
+            <p>Loading Preview Data...</p>
+          </div>
+        }
+      >
+        <PreviewBlogList query={query} />
+      </PreviewSuspense>
+    )
+  }
+
+  const posts = await client.fetch(query)
   return (
-    <div className='h-screen snap-y snap-mandatory overflow-y-auto bg-color-bg-dark-primary text-color-text-light-primary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700'>
-      <Header />
-
-      <section id='portfolioHero' className='snap-center'>
-        <Hero />
-      </section>
-
-      <section id='portfolioAbout' className='snap-center'>
-        <About />
-      </section>
-
-      <section id='portfolioExperience' className='snap-center'>
-        <WorkExperience />
-      </section>
-
-      <section id='portfolioSkills' className='snap-center'>
-        <Skills />
-      </section>
-
-      <section id='portfolioProjects' className='snap-center'>
-        <Projects />
-      </section>
-
-      <section id='contactMe' className='snap-center'>
-        <Contact />
-      </section>
-    </div>
+    <React.Fragment>
+      <BlogList posts={posts} />
+    </React.Fragment>
   )
 }

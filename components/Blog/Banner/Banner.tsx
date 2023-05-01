@@ -29,7 +29,7 @@ export default function Banner({}: Props) {
           </p>
           <p className='font-normal'>
             Would you like to visit{' '}
-            <Link href={'/'} className='text-highlight-primary'>
+            <Link href={'/portfolio'} className='text-highlight-primary'>
               My portfolio
             </Link>
           </p>

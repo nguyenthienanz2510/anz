@@ -43,6 +43,10 @@ export default async function Post({ params: { slug } }: Props) {
 
   const post: Post = await client.fetch(query, { slug })
 
+  if (post == null) {
+    return null
+  }
+
   return (
     <article>
       <section className='container'>
