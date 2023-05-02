@@ -3,10 +3,11 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
+import urlFor from '@/lib/urlFor'
 
-type Props = {}
+type Props = { portfolioData: Portfolio }
 
-export default function Header({}: Props) {
+export default function Header({ portfolioData }: Props) {
   return (
     <header className='sticky top-0 z-50 flex items-start justify-between'>
       <motion.div
@@ -25,17 +26,9 @@ export default function Header({}: Props) {
         }}
         className='flex items-center'
       >
-        <SocialIcon url='https://www.facebook.com/anz2510/' fgColor='gray' bgColor='transparent' />
-        <SocialIcon
-          url='https://www.youtube.com/channel/UCOpY5DyHAb7cqbBbVkxenjw'
-          fgColor='gray'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url='https://www.linkedin.com/in/nguy%E1%BB%85n-thi%C3%AAn-%C3%A2n-4a2857244/'
-          fgColor='gray'
-          bgColor='transparent'
-        />
+        {portfolioData.socials.map((social, index) => {
+          return <SocialIcon key={index} url={social.url} fgColor='gray' bgColor='transparent' />
+        })}
       </motion.div>
       <motion.div
         initial={{

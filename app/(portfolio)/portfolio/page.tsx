@@ -5,29 +5,53 @@ import Hero from '@/components/Portfolio/Hero'
 import Projects from '@/components/Portfolio/Projects'
 import Skills from '@/components/Portfolio/Skills'
 import WorkExperience from '@/components/Portfolio/WorkExperience'
+import { client } from '@/lib/sanity.client'
+import { groq } from 'next-sanity'
 import React from 'react'
+
+const queryPortfolio = groq`
+  *[_type == "portfolio"][0]{
+    ...,
+    socials[]->,
+  }
+`
+const queryPortfolioSkills = groq`
+  *[_type=='portfolio-skills']{
+            ...
+  } | order(order asc)
+`
+const queryPortfolioExperiences = groq`
+  *[_type=='portfolio-experience']
+    {
+       ...,
+       technologies[]->
+    } | order(dateStarted desc)
+`
 
 export const revalidate = 60
 
-export default function Home() {
+export default async function Home() {
+  const portfolioData = await client.fetch(queryPortfolio)
+  const portfolioSkillsData = await client.fetch(queryPortfolioSkills)
+  const portfolioExperiencesData = await client.fetch(queryPortfolioExperiences)
   return (
     <div className='h-screen snap-y snap-mandatory overflow-y-auto bg-color-bg-dark-primary text-color-text-light-primary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700'>
-      <Header />
+      <Header portfolioData={portfolioData} />
 
       <section id='portfolioHero' className='snap-center'>
-        <Hero />
+        <Hero portfolioData={portfolioData} />
       </section>
 
       <section id='portfolioAbout' className='snap-center'>
-        <About />
+        <About portfolioData={portfolioData} />
       </section>
 
       <section id='portfolioExperience' className='snap-center'>
-        <WorkExperience />
+        <WorkExperience portfolioExperiencesData={portfolioExperiencesData}/>
       </section>
 
       <section id='portfolioSkills' className='snap-center'>
-        <Skills />
+        <Skills portfolioSkillsData={portfolioSkillsData} />
       </section>
 
       <section id='portfolioProjects' className='snap-center'>

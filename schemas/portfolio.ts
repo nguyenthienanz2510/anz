@@ -35,7 +35,7 @@ export default defineType({
     {
       name: 'backgroundInformation',
       title: 'Background Information',
-      type: 'string'
+      type: 'text'
     },
     {
       name: 'phoneNumber',

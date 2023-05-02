@@ -24,6 +24,11 @@ export default defineType({
       type: 'string'
     },
     {
+      name: 'summary',
+      title: 'Summary',
+      type: 'text'
+    },
+    {
       name: 'dateStarted',
       title: 'Date Started',
       type: 'date'
@@ -43,6 +48,12 @@ export default defineType({
       title: 'Technologies',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'portfolio-skills' } }]
+    },
+    {
+      title: 'description',
+      name: 'description',
+      type: 'array',
+      of: [{ type: 'string' }]
     }
   ]
 })

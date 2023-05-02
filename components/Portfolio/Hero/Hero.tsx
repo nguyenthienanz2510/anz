@@ -1,16 +1,19 @@
 'use client'
 
+import urlFor from '@/lib/urlFor'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import BackgroundCircle from '../Common/BackgroundCircle'
 
-type Props = {}
+type Props = {
+  portfolioData: Portfolio
+}
 
-export default function Hero({}: Props) {
+export default function Hero({ portfolioData }: Props) {
   const [text, count] = useTypewriter({
-    words: ['Hi, The Name Nguyen Thien An', 'Guy-who-loves-Coffee.tsx', '<ButLoveToCodeMore />'],
+    words: portfolioData.slogan,
     loop: true,
     deleteSpeed: 20,
     typeSpeed: 50
@@ -25,9 +28,7 @@ export default function Hero({}: Props) {
           </div>
           <Image
             className='relative mx-auto h-32 w-32 rounded-full object-cover'
-            src={
-              'https://scontent.fsgn5-11.fna.fbcdn.net/v/t1.6435-9/82192694_2588925624664525_5889774943192743936_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=PF2mKk_PkQIAX-1q7Jw&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfBQkl7cZHG5PGpzI-lU5Ama0cSeAeNnTEp-quCFhIIDaQ&oe=64638F83'
-            }
+            src={urlFor(portfolioData.avatar).url()}
             alt={'avatar'}
             width={128}
             height={128}

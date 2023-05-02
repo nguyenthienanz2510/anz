@@ -1,4 +1,4 @@
-type Page = {
+type Base = {
   _createdAt: string
   _id: string
   _rev: string
@@ -6,7 +6,7 @@ type Page = {
   _updatedAt: string
 }
 
-interface Post extends Page {
+interface Post extends Base {
   author: Author
   body: Block[]
   categories: Category[]
@@ -66,4 +66,42 @@ interface MainImage {
 interface Title {
   _type: 'string'
   current: string
+}
+
+interface PortfolioSocial extends Base {
+  name: string
+  url: 'url'
+}
+
+interface Portfolio extends Base {
+  name: string
+  avatar: Image
+  aboutMeImage: Image
+  slogan: string[]
+  backgroundInformation: string
+  phoneNumber: string
+  email: string
+  address: string
+  socials: PortfolioSocial[]
+}
+
+interface PortfolioSkill extends Base {
+  title: string
+  image?: Image
+  summary?: string
+  progress?: number
+  detail?: string[]
+  order?: number
+}
+
+interface PortfolioExperience extends Base {
+  jobTitle: string
+  companyImage?: Image
+  companyName?: string
+  summary?: string
+  dateStarted?: string
+  dateEnded?: string
+  isCurrentWorkingHere?: boolean
+  technologies: PortfolioSkill[]
+  description: string[]
 }
