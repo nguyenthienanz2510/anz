@@ -105,3 +105,14 @@ interface PortfolioExperience extends Base {
   technologies: PortfolioSkill[]
   description: string[]
 }
+
+interface PortfolioProject extends Base {
+  title: string
+  projectImage?: string
+  summary?: string
+  technologies?: PortfolioSkill[]
+  detail?: string[]
+  linkSource?: string
+  linkToBuild?: string
+  order?: number
+}

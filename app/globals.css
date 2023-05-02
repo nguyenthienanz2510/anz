@@ -49,7 +49,7 @@ body {
     @apply underline decoration-color-secondary-light dark:decoration-color-secondary-dark;
   }
   .blog-content {
-    @apply text-justify container mb-20 mt-10 md:mt-14;
+    @apply container mb-20 mt-10 md:mt-14;
   }
   .blog-content ul {
     @apply mb-5 ml-6 list-disc space-y-4 md:ml-10
@@ -67,7 +67,7 @@ body {
     @apply my-10 border-l-4 border-l-color-secondary-light py-2 pl-5;
   }
   .blog-content p {
-    @apply mb-5;
+    @apply mb-5 text-justify;
   }
   .blog-content h1,
   .blog-content h2,

@@ -3,18 +3,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Carousel } from 'flowbite-react'
+import urlFor from '@/lib/urlFor'
+import Image from 'next/image'
 
-type Props = {}
+type Props = {
+  portfolioProjectsData: PortfolioProject[]
+}
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5]
+export default function Projects({ portfolioProjectsData }: Props) {
   return (
     <div className='relative mx-auto flex h-screen items-center justify-center pt-[50px]'>
       <h2 className='absolute top-20 z-10 translate-x-3 text-16 uppercase tracking-[20px] md:text-20'>Projects</h2>
       <div className='absolute top-[30%] z-0 h-[50%] w-full -skew-y-12 bg-color-primary-light/20 md:-skew-y-6'></div>
       <div className='h-full w-full px-4 md:px-0'>
         <Carousel slideInterval={5000}>
-          {projects.map((_, index) => {
+          {portfolioProjectsData.map((project, index) => {
             return (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -31,8 +34,9 @@ export default function Projects({}: Props) {
                   transition={{
                     duration: 0.7
                   }}
-                  src='https://d1ubwt7z1ubyyw.cloudfront.net/uploads/best-places-to-visit-for-christmas-season-meta-1673593447.jpg'
-                  alt='project image'
+                  src={urlFor(project.projectImage).url()}
+                  alt={project.title}
+                  title={project.title}
                   className='mx-auto block w-3/4 flex-shrink-0 rounded-lg md:w-1/2'
                 />
                 <motion.div
@@ -45,21 +49,61 @@ export default function Projects({}: Props) {
                 >
                   <h2 className='upercase text-18 font-bold md:text-24'>
                     <span className='underline decoration-color-secondary-light/50'>
-                      Case Study {index + 1} of {projects.length}:
+                      Case Study {index + 1} of {portfolioProjectsData.length}:
                     </span>{' '}
-                    MugsKOK
+                    {project.title}
                   </h2>
                   <p className='mx-auto w-full text-justify text-14 md:w-3/4 md:text-center md:text-16'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni assumenda corporis. Dolores
-                    aliquam voluptatum quae. Fuga aliquid nam inventore unde tempore itaque dolorum quas, commodi
-                    numquam provident quibusdam nulla suscipit nostrum, eligendi mollitia reiciendis eveniet consectetur
-                    odio voluptatibus ipsam voluptates. In sequi quisquam repellendus nihil, minus nemo! Corrupti
-                    nesciunt dicta, blanditiis perspiciatis perferendis dolore, porro nisi at aut veritatis eveniet
-                    aspernatur vel velit voluptas impedit soluta? Dolores eveniet dolorum quaerat repudiandae, facilis
-                    magni rem sunt porro maiores obcaecati nam, necessitatibus fuga, distinctio assumenda perspiciatis!
-                    Consequatur voluptates libero illum nisi molestiae at eligendi? Reiciendis saepe aperiam dolorum
-                    omnis laborum ut!
+                    {project.summary}
                   </p>
+                  <div className='mx-auto flex w-full flex-wrap justify-center gap-2 text-14 md:text-16'>
+                    {project.technologies?.map((technology, index) => {
+                      return (
+                        <Image
+                          key={index}
+                          src={urlFor(technology.image).url()}
+                          alt={technology.title}
+                          title={technology.title}
+                          width={40}
+                          height={40}
+                          className='h-7 w-7 rounded-full bg-color-bg-dark-secondary md:h-10  md:w-10'
+                        />
+                      )
+                    })}
+                  </div>
+                  <ul className='mx-auto w-full list-disc space-y-2 pl-4 text-justify text-14 md:w-3/4 md:space-y-3 md:text-16'>
+                    {project.detail?.map((item, index) => {
+                      return <li key={index}>{item}</li>
+                    })}
+                    {project.linkSource && (
+                      <li>
+                        Link source:{' '}
+                        <a
+                          title={project.title}
+                          className='underline decoration-color-secondary-dark transition-all hover:text-color-primary-dark hover:decoration-color-primary-dark'
+                          target='_blank'
+                          rel='noreferrer'
+                          href={project.linkSource}
+                        >
+                          {project.linkSource}
+                        </a>
+                      </li>
+                    )}
+                    {project.linkToBuild && (
+                      <li>
+                        Link project:{' '}
+                        <a
+                          title={project.title}
+                          className='underline decoration-color-secondary-dark transition-all hover:text-color-primary-dark hover:decoration-color-primary-dark'
+                          target='_blank'
+                          rel='noreferrer'
+                          href={project.linkToBuild}
+                        >
+                          {project.linkToBuild}
+                        </a>
+                      </li>
+                    )}
+                  </ul>
                 </motion.div>
               </motion.div>
             )

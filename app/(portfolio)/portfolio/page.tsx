@@ -27,6 +27,13 @@ const queryPortfolioExperiences = groq`
        technologies[]->
     } | order(dateStarted desc)
 `
+const queryPortfolioProjects = groq`
+  *[_type=='portfolio-projects']
+    {
+      ...,
+      technologies[]->
+    } | order(order asc)
+`
 
 export const revalidate = 60
 
@@ -34,6 +41,7 @@ export default async function Home() {
   const portfolioData = await client.fetch(queryPortfolio)
   const portfolioSkillsData = await client.fetch(queryPortfolioSkills)
   const portfolioExperiencesData = await client.fetch(queryPortfolioExperiences)
+  const portfolioProjectsData = await client.fetch(queryPortfolioProjects)
   return (
     <div className='h-screen snap-y snap-mandatory overflow-y-auto bg-color-bg-dark-primary text-color-text-light-primary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-700'>
       <Header portfolioData={portfolioData} />
@@ -55,7 +63,7 @@ export default async function Home() {
       </section>
 
       <section id='portfolioProjects' className='snap-center'>
-        <Projects />
+        <Projects portfolioProjectsData={portfolioProjectsData}/>
       </section>
 
       <section id='contactMe' className='snap-center'>

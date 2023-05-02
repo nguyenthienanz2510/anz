@@ -42,7 +42,7 @@ export default function ExperienceCard({ experience }: Props) {
                   title={technology.title}
                   width={40}
                   height={40}
-                  className='h-7 w-7 rounded-full md:h-10  md:w-10'
+                  className='h-7 w-7 rounded-full bg-color-bg-dark-secondary md:h-10  md:w-10'
                 />
               )
             })}

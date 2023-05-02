@@ -21,7 +21,7 @@ export default defineType({
     {
       name: 'summary',
       title: 'Summary',
-      type: 'string'
+      type: 'text'
     },
     {
       name: 'technologies',
@@ -30,9 +30,25 @@ export default defineType({
       of: [{ type: 'reference', to: { type: 'portfolio-skills' } }]
     },
     {
+      title: 'detail',
+      name: 'detail',
+      type: 'array',
+      of: [{ type: 'string' }]
+    },
+    {
+      name: 'linkSource',
+      title: 'Link Source',
+      type: 'url'
+    },
+    {
       name: 'linkToBuild',
       title: 'Link To Build',
       type: 'url'
+    },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number'
     }
   ]
 })
