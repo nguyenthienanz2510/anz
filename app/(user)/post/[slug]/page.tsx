@@ -33,14 +33,6 @@ export async function generateStaticParams() {
   }))
 }
 
-// export const metadata: Metadata = {
-//   title: "Nguyen Thien An's Daily Blog Detail",
-//   description: "Nguyen Thien An's Daily Blog Detail",
-//   openGraph: {
-//     images: 
-//   }
-// }
-
 export async function generateMetadata({ params: { slug } }: Props) {
   const query = groq`
         *[_type=='post' && slug.current == $slug][0]
@@ -63,8 +55,8 @@ export async function generateMetadata({ params: { slug } }: Props) {
     },
     title: `${post.title} | Nguyen Thien An's Daily Blog`,
     description: post.title,
-    keywords: `Nguyen Thien An's Daily Blog`,
-    creator: 'Nguyen Thien An'
+    keywords: post.title,
+    creator: post.author
   }
 }
 

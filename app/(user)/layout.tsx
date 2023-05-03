@@ -6,6 +6,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   openGraph: {
+    title: `Nguyen Thien An's Daily Blog`,
+    description: `Nguyen Thien An's Daily Blog`,
     images: 'https://cdn.sanity.io/images/gm83a3pq/production/07ea92552cf8d558222ef9ee3f271db1a05f5970-1920x1080.jpg'
   },
   title: `Nguyen Thien An's Daily Blog`,

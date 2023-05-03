@@ -55,7 +55,7 @@ export default async function Home() {
       </section>
 
       <section id='portfolioExperience' className='snap-center'>
-        <WorkExperience portfolioExperiencesData={portfolioExperiencesData}/>
+        <WorkExperience portfolioExperiencesData={portfolioExperiencesData} />
       </section>
 
       <section id='portfolioSkills' className='snap-center'>
@@ -63,7 +63,7 @@ export default async function Home() {
       </section>
 
       <section id='portfolioProjects' className='snap-center'>
-        <Projects portfolioProjectsData={portfolioProjectsData}/>
+        <Projects portfolioProjectsData={portfolioProjectsData} />
       </section>
 
       <section id='contactMe' className='snap-center'>

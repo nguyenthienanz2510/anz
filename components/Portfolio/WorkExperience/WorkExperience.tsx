@@ -27,7 +27,7 @@ export default function WorkExperience({ portfolioExperiencesData }: Props) {
       >
         <Carousel slideInterval={5000} className='flex items-center justify-center'>
           {portfolioExperiencesData.map((experience) => {
-            return <ExperienceCard key={experience._id} experience={experience}/>
+            return <ExperienceCard key={experience._id} experience={experience} />
           })}
         </Carousel>
       </motion.div>
