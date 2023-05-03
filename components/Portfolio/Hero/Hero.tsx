@@ -43,16 +43,24 @@ export default function Hero({ portfolioData }: Props) {
           </h1>
           <div className='z-1 relative mx-auto flex justify-center gap-6 text-xs md:gap-10 md:text-sm'>
             <a href='#portfolioAbout'>
-              <button className='uppercase'>About</button>
+              <button className='uppercase' title='About' aria-label='About'>
+                About
+              </button>
             </a>
             <a href='#portfolioExperience'>
-              <button className='uppercase'>Experience</button>
+              <button className='uppercase' title='Experience' aria-label='Experience'>
+                Experience
+              </button>
             </a>
             <a href='#portfolioSkills'>
-              <button className='uppercase'>Skills</button>
+              <button className='uppercase' title='Skills' aria-label='Skills'>
+                Skills
+              </button>
             </a>
             <a href='#portfolioProjects'>
-              <button className='uppercase'>Projects</button>
+              <button className='uppercase' title='Projects' aria-label='Projects'>
+                Projects
+              </button>
             </a>
           </div>
         </div>

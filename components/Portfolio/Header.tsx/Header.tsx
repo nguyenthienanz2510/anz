@@ -46,9 +46,13 @@ export default function Header({ portfolioData }: Props) {
         }}
         className='flex items-center text-gray-500'
       >
-        <SocialIcon href='#contactMe' network='email' className='cursor-pointer' fgColor='gray' bgColor='transparent' />
+        <a href='#contactMe' title='Contact Me'>
+          <SocialIcon network='email' className='cursor-pointer' fgColor='gray' bgColor='transparent' />
+        </a>
         <p className='hidden pr-2 uppercase md:inline-flex'>
-          <a href='#contactMe'>Get in touch</a>
+          <a href='#contactMe' title='Contact Me'>
+            Get in touch
+          </a>
         </p>
       </motion.div>
     </header>

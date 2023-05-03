@@ -57,7 +57,12 @@ export default function Contact({}: Props) {
           </div>
           <input {...register('subject')} className='contactInput' placeholder='Subject' type='text' />
           <textarea {...register('message')} className='contactInput' placeholder='Message' />
-          <button type='submit' className='w-full rounded bg-color-primary-light p-4 text-color-text-light-primary'>
+          <button
+            type='submit'
+            title='Submit'
+            aria-label='Submit'
+            className='w-full rounded bg-color-primary-light p-4 text-color-text-light-primary'
+          >
             Submit
           </button>
         </form>
