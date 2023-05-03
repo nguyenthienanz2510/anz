@@ -2,7 +2,9 @@ import { RichTextComponents } from '@/components/Common/RichTextComponents/RichT
 import { client } from '@/lib/sanity.client'
 import urlFor from '@/lib/urlFor'
 import { PortableText } from '@portabletext/react'
+import { Metadata } from 'next'
 import { groq } from 'next-sanity'
+import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 
@@ -29,6 +31,41 @@ export async function generateStaticParams() {
   return slugRoutes.map((slug) => ({
     slug: slug
   }))
+}
+
+// export const metadata: Metadata = {
+//   title: "Nguyen Thien An's Daily Blog Detail",
+//   description: "Nguyen Thien An's Daily Blog Detail",
+//   openGraph: {
+//     images: 
+//   }
+// }
+
+export async function generateMetadata({ params: { slug } }: Props) {
+  const query = groq`
+        *[_type=='post' && slug.current == $slug][0]
+        {
+            ...,
+            author->,
+            categories[]->
+        }
+    `
+
+  const post: Post = await client.fetch(query, { slug })
+
+  if (post == null) {
+    return null
+  }
+
+  return {
+    openGraph: {
+      images: urlFor(post.mainImage).url()
+    },
+    title: `${post.title} | Nguyen Thien An's Daily Blog`,
+    description: post.title,
+    keywords: `Nguyen Thien An's Daily Blog`,
+    creator: 'Nguyen Thien An'
+  }
 }
 
 export default async function Post({ params: { slug } }: Props) {
