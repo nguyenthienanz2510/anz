@@ -36,7 +36,7 @@ export default function About({ portfolioData }: Props) {
           }}
           className='relative mx-auto h-40 w-40 shrink-0 rounded-full object-cover lg:h-96 lg:w-96 lg:rounded-lg'
           src={urlFor(portfolioData.aboutMeImage).url()}
-          alt={'avatar'}
+          alt={'about me'}
         />
         <div className='space-y-5'>
           <h3 className='text-22 font-bold md:text-36'>Here is a little background</h3>
