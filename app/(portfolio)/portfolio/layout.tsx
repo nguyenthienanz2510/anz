@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
+      <head>
+        <meta name='google-site-verification' content='5oKIYQydNIEfF1lCj1Fhtp1eQIsR4oOImWEmuYgtoR4' />
+      </head>
       <body>{children}</body>
     </html>
   )
