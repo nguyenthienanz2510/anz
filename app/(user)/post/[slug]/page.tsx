@@ -54,9 +54,9 @@ export async function generateMetadata({ params: { slug } }: Props) {
       images: urlFor(post.mainImage).url()
     },
     title: `${post.title} | Nguyen Thien An's Daily Blog`,
-    description: post.title,
-    keywords: post.title,
-    creator: post.author
+    description: post.description,
+    keywords: [`${post.title}`, `Nguyen Thien An's Daily Blog`, `Nguyen Thien An`, `An's Blog`, `An's Daily Blog`],
+    creator: post.author.name
   }
 }
 
